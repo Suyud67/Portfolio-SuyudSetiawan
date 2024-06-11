@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'RobotoMono-Regular';
+  src: url('./RobotoMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoMono-Medium';
+  src: url('./RobotoMono-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoMono-SemiBold';
+  src: url('./RobotoMono-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoMono-Bold';
+  src: url('./RobotoMono-Bold.ttf') format('truetype');
+}

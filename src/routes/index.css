@@ -1,0 +1,9 @@
+@import '../assets/font/Roboto-Mono/index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #060606;
+}
