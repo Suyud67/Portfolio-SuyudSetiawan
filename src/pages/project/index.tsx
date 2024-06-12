@@ -8,26 +8,26 @@ import restaurantAppImg from '../../assets/image/restaurantsApp.webp';
 
 const projects = [
   {
-    project_name: 'Note App',
+    title: 'Note App',
     description:
       'This App will help you to write every single moment, and everywhere.',
-    link_project: 'https://suyud67-note-app-2.netlify.app/',
+    linkProject: 'https://suyud67-note-app-2.netlify.app/',
     labels: ['React', 'CSS', 'API', 'React Routers', 'React Icon'],
-    image: noteAppImg,
+    imgProject: noteAppImg,
   },
   {
-    project_name: "Let's Eat",
+    title: "Let's Eat",
     description: 'Find favorite restaurants around you 🍜',
-    link_project: 'https://suyud67-lets-restaurant.netlify.app/',
+    linkProject: 'https://suyud67-lets-restaurant.netlify.app/',
     labels: ['HTML', 'CSS', 'Javascript', 'indexDB', 'API', 'Webpack', 'PWA'],
-    image: restaurantAppImg,
+    imgProject: restaurantAppImg,
   },
   {
-    project_name: 'Weather App',
+    title: 'Weather App',
     description: 'Check the weather before travel around the world 🛫',
-    link_project: 'https://suyud67-weather-app.netlify.app/',
+    linkProject: 'https://suyud67-weather-app.netlify.app/',
     labels: ['HTML', 'CSS', 'Javascript', 'API'],
-    image: watherAppImg,
+    imgProject: watherAppImg,
   },
 ];
 
@@ -55,13 +55,7 @@ const ProjectPage = (): JSX.Element => {
             'lg:grid-cols-3'
           )}>
           {projects.map((item, indexItem) => (
-            <CardProject
-              key={indexItem}
-              chipLabel={item.labels}
-              title={item.project_name}
-              imgProject={item.image}
-              descProject={item.description}
-            />
+            <CardProject key={indexItem} item={item} />
           ))}
         </div>
       </div>

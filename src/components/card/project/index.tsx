@@ -4,19 +4,19 @@ import { ArrowRight } from 'lucide-react';
 import Chip from '../../chip';
 import LinkButton from '../../button/LinkButton';
 
-interface Props {
+export interface itemType {
   imgProject: string;
   title: string;
-  chipLabel: string[];
-  descProject: string;
+  labels: string[];
+  description: string;
+  linkProject: string;
 }
 
-const CardProject = ({
-  title,
-  chipLabel,
-  imgProject,
-  descProject,
-}: Props): JSX.Element => {
+interface Props {
+  item: itemType;
+}
+
+const CardProject = ({ item }: Props): JSX.Element => {
   return (
     <div
       className={clsx(
@@ -25,7 +25,7 @@ const CardProject = ({
       <div>
         <div>
           <img
-            src={imgProject}
+            src={item.imgProject}
             alt="img project"
             className={clsx(' mx-auto')}
             loading="lazy"
@@ -34,24 +34,24 @@ const CardProject = ({
         <div className={clsx('mt-2')}>
           <div>
             <h1 className={clsx('text-base', 'md:text-lg', 'lg:text-xl')}>
-              {title}
+              {item.title}
             </h1>
             <div className={clsx('my-3 flex gap-2 flex-wrap')}>
-              {typeof chipLabel !== 'string' ? (
-                chipLabel.map((item) => (
+              {typeof item.labels !== 'string' ? (
+                item.labels.map((item) => (
                   <Chip className={clsx('bg-[#097EA5]')} title={item} />
                 ))
               ) : (
-                <Chip className={clsx('bg-[#097EA5]')} title={chipLabel} />
+                <Chip className={clsx('bg-[#097EA5]')} title={item.labels} />
               )}
             </div>
-            <p>{descProject}</p>
+            <p>{item.description}</p>
           </div>
         </div>
       </div>
       <div className={clsx('mt-4 text-right')}>
         <LinkButton
-          linkTo="/"
+          linkTo={item.linkProject}
           linkType="external"
           label={'Check Project'}
           className={clsx('hover:font-semibold')}
