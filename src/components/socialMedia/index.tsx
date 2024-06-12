@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import LinkButton from '../button/LinkButton';
 import { Github, Linkedin, Mail } from 'lucide-react';
-import { Email } from '../../assets/svg/mail';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   iconClassname?: string;
