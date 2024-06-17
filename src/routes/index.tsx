@@ -1,13 +1,10 @@
-import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import App from '../App';
+import Contact from '../pages/contact';
 import ProjectPage from '../pages/project';
 
-import './index.css';
-import Contact from '../pages/contact';
-
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
@@ -21,7 +18,3 @@ const router = createBrowserRouter([
     element: <Contact />,
   },
 ]);
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <RouterProvider router={router} />
-);

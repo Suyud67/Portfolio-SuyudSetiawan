@@ -1,4 +1,4 @@
-@import '../assets/font/Roboto-Mono/index.css';
+@import './assets/font/Roboto-Mono/index.css';
 
 @tailwind base;
 @tailwind components;
