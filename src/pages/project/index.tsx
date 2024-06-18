@@ -2,9 +2,9 @@ import clsx from 'clsx';
 
 import CardProject from '../../components/card/project';
 import ContainerLayout from '../../components/layout';
-import noteAppImg from '../../assets/image/noteApp.webp';
-import watherAppImg from '../../assets/image/weatherApp.webp';
-import restaurantAppImg from '../../assets/image/restaurantsApp.webp';
+import noteAppImg from '../../assets/image/notes-app.jpg';
+import watherAppImg from '../../assets/image/weather-app.webp';
+import restaurantAppImg from '../../assets/image/restaurant-app.webp';
 
 const projects = [
   {

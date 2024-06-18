@@ -4,6 +4,8 @@ import { ArrowRight } from 'lucide-react';
 import Chip from '../../chip';
 import LinkButton from '../../button/LinkButton';
 
+import './project.css';
+
 export interface itemType {
   imgProject: string;
   title: string;
@@ -20,15 +22,15 @@ const CardProject = ({ item }: Props): JSX.Element => {
   return (
     <div
       className={clsx(
-        'bg-[#2c2c2d] rounded-xl p-4 flex flex-col justify-between'
+        'card bg-[#2c2c2d] rounded-xl p-4 flex flex-col justify-between'
       )}>
       <div>
-        <div>
+        <div className="overflow-hidden">
           <img
             src={item.imgProject}
-            alt="img project"
-            className={clsx(' mx-auto')}
+            alt="image project"
             loading="lazy"
+            className={clsx('img-project h-[200px]')}
           />
         </div>
         <div className={clsx('mt-2')}>
@@ -36,10 +38,15 @@ const CardProject = ({ item }: Props): JSX.Element => {
             <h1 className={clsx('text-base', 'md:text-lg', 'lg:text-xl')}>
               {item.title}
             </h1>
-            <div className={clsx('my-3 flex gap-2 flex-wrap')}>
+            <div className={clsx('my-3 flex gap-3 flex-wrap')}>
               {typeof item.labels !== 'string' ? (
                 item.labels.map((item) => (
-                  <Chip className={clsx('bg-[#097EA5]')} title={item} />
+                  <Chip
+                    className={clsx(
+                      'border hover:cursor-default hover:shadow-[0_5px_15px_rgba(254,255,254,0.3)]'
+                    )}
+                    title={item}
+                  />
                 ))
               ) : (
                 <Chip className={clsx('bg-[#097EA5]')} title={item.labels} />
