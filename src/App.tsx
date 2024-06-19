@@ -1,7 +1,8 @@
 import clsx from 'clsx';
+import Tilt from 'react-parallax-tilt';
 
 import ContainerLayout from './components/layout';
-import profileImg from './assets/image/suyudsetiawan.webp';
+import profileImg from './assets/image/person-avatar.webp';
 
 function App() {
   return (
@@ -34,16 +35,18 @@ function App() {
           </p>
         </div>
         <div>
-          <img
-            src={profileImg}
-            alt="profile image"
-            className={clsx(
-              'rounded-full w-[200px] h-[200px]',
-              'md:w-[350px] md:h-[200px]',
-              'lg:w-[450px] lg:h-[200px]',
-              'xl:w-[450px] xl:h-[300px]'
-            )}
-          />
+          <Tilt>
+            <img
+              src={profileImg}
+              alt="profile image"
+              className={clsx(
+                ' w-[200px] h-[200px]',
+                'md:w-[350px] md:h-[200px]',
+                'lg:w-[450px] lg:h-[200px]',
+                'xl:w-[450px] xl:h-[300px]'
+              )}
+            />
+          </Tilt>
         </div>
       </div>
     </ContainerLayout>
