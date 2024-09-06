@@ -123,7 +123,7 @@ const AnimateTechStackScroll = (): JSX.Element => {
 
   const x = useTransform(baseX, (v) => `${wrap(-totalWidth, 0, v)}px`);
 
-  useAnimationFrame((t, delta) => {
+  useAnimationFrame((_, delta) => {
     let moveBy = directionFactor.current * -5 * (delta / 1000);
     baseX.set(baseX.get() + moveBy);
   });
