@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Hash, MapPin, NotebookPen } from 'lucide-react';
 
-import SocialMedia from '../SocialMedia/index.tsx';
+import SocialMedia from '../SocialMedia';
 import AnimateTechStackScroll from '../AnimateTechStackScroll';
 
 const Sidebar = () => {
