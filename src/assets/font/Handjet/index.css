@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Handjet-Light';
+  src: url('./Handjet-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Handjet-Regular';
+  src: url('./Handjet-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Handjet-Medium';
+  src: url('./Handjet-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Handjet-SemiBold';
+  src: url('./Handjet-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Handjet-Bold';
+  src: url('./Handjet-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Handjet-ExtraBold';
+  src: url('./Handjet-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Handjet-Black';
+  src: url('./Handjet-Black.ttf') format('truetype');
+}

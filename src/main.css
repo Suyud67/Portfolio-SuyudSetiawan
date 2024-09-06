@@ -1,9 +1,10 @@
 @import './assets/font/Roboto-Mono/index.css';
+@import './assets/font/Handjet/index.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background-color: #060606;
+  background-color: #0e0004;
 }

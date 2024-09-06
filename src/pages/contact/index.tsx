@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import SocialMedia from '../../components/socialMedia';
+// import SocialMedia from '../../components/socialMedia';
 import ContainerLayout from '../../components/layout';
 
 const Contact = (): JSX.Element => {
@@ -17,14 +17,14 @@ const Contact = (): JSX.Element => {
           </h1>
         </div>
 
-        <SocialMedia
+        {/* <SocialMedia
           className={clsx('flex justify-center gap-6', 'lg:justify-end')}
           iconClassname={clsx(
             'w-[35px] h-[35px]',
             'md:w-[60px] md:h-[60px]',
             'lg:w-[75px] lg:h-[75px]'
           )}
-        />
+        /> */}
       </div>
     </ContainerLayout>
   );

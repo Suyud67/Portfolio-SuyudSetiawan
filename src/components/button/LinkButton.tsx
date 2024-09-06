@@ -5,25 +5,25 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   linkTo: string;
   icon?: JSX.Element;
   method?: () => void;
-  label: string | JSX.Element;
   linkType: 'internal' | 'external';
+  linkClassName?: string;
 }
 
 const LinkButton = ({
   icon,
-  label,
   method,
   linkTo,
   linkType,
   className,
+  linkClassName,
 }: Props): JSX.Element => {
   if (linkType === 'internal') {
     return (
       <Link
-        className={clsx(className)}
+        className={clsx(linkClassName)}
         to={linkTo}
         onClick={method ? method : () => {}}>
-        {label} {icon ? icon : null}
+        <span className={clsx(className)}>{icon ? icon : null}</span>
       </Link>
     );
   } else {
@@ -31,9 +31,9 @@ const LinkButton = ({
       <a
         href={linkTo}
         target="_blank"
-        className={clsx(className)}
+        className={clsx(linkClassName)}
         onClick={method ? method : () => {}}>
-        {label} {icon ? icon : null}
+        <span className={clsx(className)}>{icon ? icon : null}</span>
       </a>
     );
   }

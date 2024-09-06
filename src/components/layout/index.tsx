@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Navigation from '../navigation';
 import Footer from '../footer';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -8,8 +7,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const ContainerLayout = ({ className, children, footerClassName }: Props) => {
   return (
-    <div className={clsx('text-white font-rm-regular relative', className)}>
-      <Navigation />
+    <div className={clsx('text-white font-rm-medium relative', className)}>
       {children}
       <Footer className={clsx(footerClassName)} />
     </div>
