@@ -5,7 +5,7 @@ import { useState } from 'react';
 import HeroProfile from '../../assets/image/dtd.webp';
 import ProfileImage from '../../assets/image/suyudsetiawan.png';
 import useResizeWindow from '../../hooks/useResizeWindow';
-import SocialMedia from '../SocialMedia';
+import SocialMedia from '../SocialMedia/index';
 import AnimateTechStackScroll from '../AnimateTechStackScroll';
 
 const bio =
