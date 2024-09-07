@@ -27,7 +27,7 @@ const SocialMediaLink = [
   },
 ];
 
-const Media: FC<Props> = ({ className }): JSX.Element => {
+const Contacts: FC<Props> = ({ className }): JSX.Element => {
   return (
     <div className={clsx('inline-flex gap-4', className)}>
       {SocialMediaLink.map(({ link, icon, linkType, bgColor }, indexItem) => (
@@ -61,4 +61,4 @@ const Media: FC<Props> = ({ className }): JSX.Element => {
   );
 };
 
-export default Media;
+export default Contacts;

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import HeroProfile from '../../assets/image/dtd.webp';
 import ProfileImage from '../../assets/image/suyudsetiawan.png';
 import useResizeWindow from '../../hooks/useResizeWindow';
-import Media from '../media';
+import Contacts from '../media';
 import AnimateTechStackScroll from '../AnimateTechStackScroll';
 
 const bio =
@@ -69,7 +69,7 @@ const Header = () => {
                 <p className={clsx('text-sm', 'md:text-base')}>
                   Web Developer | Bali, Indonesia
                 </p>
-                <Media className={clsx('mt-4')} />
+                <Contacts className={clsx('mt-4')} />
 
                 {!isMediaScreen('lg') && (
                   <div className={clsx('mt-4')}>

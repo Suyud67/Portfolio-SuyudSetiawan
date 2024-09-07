@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Hash, MapPin, NotebookPen } from 'lucide-react';
 
-import Media from '../media';
+import Contacts from '../media';
 import AnimateTechStackScroll from '../AnimateTechStackScroll';
 
 const Sidebar = () => {
@@ -33,7 +33,7 @@ const Sidebar = () => {
             )}>
             <AnimateTechStackScroll />
           </div>
-          <Media />
+          <Contacts />
         </div>
       </div>
     </div>
