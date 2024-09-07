@@ -1,61 +1,45 @@
 import clsx from 'clsx';
 import { Hash } from 'lucide-react';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import Card from './components/Card';
+import certification1 from './assets/image/sertif1.webp';
+import certification2 from './assets/image/sertif2.webp';
+import certification3 from './assets/image/sertif3.webp';
+import certification4 from './assets/image/sertif4.webp';
+import Tabs from './components/Tabs/Tabs';
 import Header from './components/header';
 import Sidebar from './components/Sidebar';
-import project1 from './assets/image/btwedutech.webp';
-import project2 from './assets/image/app-mitra.webp';
-import project3 from './assets/image/restaurant-app.webp';
-import project4 from './assets/image/notes-app.webp';
+import Projects from './components/Projects';
 import ContainerLayout from './components/layout';
-import { TypeScript } from './assets/icons/typescript';
-import { NextJS } from './assets/icons/nextjs';
-import { ReactJS } from './assets/icons/react';
-import { Tailwind } from './assets/icons/tailwind';
-import { Redux } from './assets/icons/redux';
-import { MUI } from './assets/icons/mui';
-import { Javascript } from './assets/icons/js';
-import { HTML } from './assets/icons/html';
-import { CSS } from './assets/icons/css';
-import { Webpack } from './assets/icons/webpack';
 import useResizeWindow from './hooks/useResizeWindow';
 
-const projects = [
+const dataTabs = ['projects', 'certifications'];
+
+const certifications = [
   {
-    title: 'BTW Edutech Company Portofolio',
-    image: project1,
-    url: 'https://www.btwedutech.com/',
-    techStack: [
-      <TypeScript />,
-      <NextJS />,
-      <ReactJS />,
-      <Tailwind />,
-      <Redux />,
-    ],
+    name: 'Front End Web Developer Expert',
+    image: certification1,
   },
   {
-    title: 'BTW Edutech Affiliate Partner Program',
-    image: project2,
-    url: 'https://mitra.btwedutech.com/',
-    techStack: [<TypeScript />, <NextJS />, <ReactJS />, <Tailwind />, <MUI />],
+    name: 'Fundamental of Front End Web Developer',
+    image: certification2,
   },
   {
-    title: "Let's Eat",
-    image: project3,
-    url: 'https://suyud67-lets-restaurant.netlify.app/',
-    techStack: [<HTML />, <CSS />, <Javascript />, <Webpack />],
+    name: 'Fundamental of Web Application with React',
+    image: certification3,
   },
   {
-    title: 'Notes App',
-    image: project4,
-    url: 'https://suyud67-note-app-2.netlify.app/',
-    techStack: [<ReactJS />, <Javascript />, <CSS />],
+    name: 'Independent Study of Web Front End and React',
+    image: certification4,
   },
 ];
 
 function App() {
   const { isMediaScreen } = useResizeWindow();
+
+  const [activeTab, setActiveTab] = useState<string>('projects');
+  const [isCardHover, setIsCardHover] = useState<number | null>(null);
 
   return (
     <ContainerLayout className={clsx('pt-7 pb-4 px-5', 'md:w-4/5 md:mx-auto')}>
@@ -73,28 +57,70 @@ function App() {
             'bg-[#363537] rounded-2xl w-full py-6 px-4 mt-6',
             'lg:col-span-8 lg:px-6 lg:pt-4 lg:pb-8 lg:m-0'
           )}>
-          <div className={clsx('mb-4')}>
-            <h1
-              className={clsx(
-                'font-rm-semibold text-base mb-2',
-                'lg:text-xl lg:mb-1'
-              )}>
-              <Hash className={clsx('inline text-[#D81E5B]')} />
-              Project
-            </h1>
-            <p className={clsx('text-sm', 'lg:text-base')}>
-              Every project i ever made
-            </p>
-          </div>
-          <div
-            className={clsx(
-              'flex flex-col gap-y-4 justify-center',
-              'xs:flex-row xs:gap-y-8 xs:justify-evenly xs:flex-wrap'
-            )}>
-            {projects.map((project, indexItem) => (
-              <Card key={indexItem} project={{ ...project, indexItem }} />
-            ))}
-          </div>
+          <Tabs tabs={dataTabs} activeTab={activeTab} onClick={setActiveTab} />
+          {activeTab === 'projects' ? (
+            <Projects />
+          ) : (
+            <>
+              <div className={clsx('my-4')}>
+                <h1
+                  className={clsx('font-rm-semibold text-base', 'lg:text-xl')}>
+                  <Hash className={clsx('inline text-[#D81E5B]')} />
+                  Certifications
+                </h1>
+              </div>
+              <div className={clsx('flex flex-col gap-y-4')}>
+                {certifications.map((cert, index) => (
+                  <div
+                    key={index}
+                    onMouseEnter={() => setIsCardHover(index + 1)}
+                    onMouseLeave={() => setIsCardHover(null)}
+                    className={clsx('relative w-full')}>
+                    <img
+                      src={cert.image}
+                      alt="certification"
+                      className={clsx('w-full rounded-2xl')}
+                    />
+                    <AnimatePresence>
+                      {isCardHover === index + 1 ? (
+                        <motion.div
+                          initial={{ y: 2, opacity: 0 }}
+                          animate={
+                            isCardHover
+                              ? { y: 0, opacity: 1 }
+                              : { y: 2, opacity: 0 }
+                          }
+                          exit={{ y: 2, opacity: 0 }}
+                          transition={{
+                            type: 'spring',
+                            stiffness: 50,
+                            damping: 10,
+                            duration: 0.5,
+                          }}
+                          className={clsx(
+                            'absolute bottom-0 left-0',
+                            'w-full pl-6 pb-6'
+                          )}
+                          style={{
+                            borderRadius: '0 0 16px 16px',
+                            background:
+                              'linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)',
+                          }}>
+                          <h1
+                            className={clsx(
+                              'font-rm-semibold text-base text-black',
+                              'lg:text-lg'
+                            )}>
+                            {cert.name}
+                          </h1>
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </main>
     </ContainerLayout>
