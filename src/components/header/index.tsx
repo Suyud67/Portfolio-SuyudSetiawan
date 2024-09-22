@@ -41,11 +41,12 @@ const Header = () => {
             {isMediaScreen('lg') ? (
               <p className={clsx('text-base text-justify mt-2')}>
                 Hello World I'm Suyud Setiawan Al Arif, you guys can call me
-                Suyud and I am a web developer specializing in web application
+                Suyud and I am a Frontend specializing in web application
                 development using React. I have a strong interest in modern web
                 technologies and have developed various projects that showcase
                 my ability to create dynamic, responsive, and user-friendly web
-                applications.
+                applications. I thrive on collaborating with teams to deliver
+                efficient, scalable, and visually appealing web applications.
               </p>
             ) : (
               <>
