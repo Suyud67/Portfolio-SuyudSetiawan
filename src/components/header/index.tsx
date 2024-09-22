@@ -9,7 +9,7 @@ import Contacts from '../media';
 import AnimateTechStackScroll from '../AnimateTechStackScroll';
 
 const bio =
-  "Hello World I'm Suyud Setiawan Al Arif, you guys can call me Suyud and I am a web developer specializing in web application development using React. I have a strong interest in modern web technologies and have developed various projects that showcase my ability to create dynamic, responsive, and user-friendly web applications. I have contributed to several web development projects that use React as the main technology. One significant project I worked on was the Partner Website Project for Bina Taruna Wiratama Company, where I was responsible for building the front-end of the application that integrated with various APIs. In this project, I used React to build reusable components, which not only accelerated the development process but also enhanced design consistency across the application.";
+  "Hello World I'm Suyud Setiawan Al Arif, you guys can call me Suyud and I am a web developer specializing in web application development using React. I have a strong interest in modern web technologies and have developed various projects that showcase my ability to create dynamic, responsive, and user-friendly web applications.";
 
 const Header = () => {
   const { isMediaScreen } = useResizeWindow();
