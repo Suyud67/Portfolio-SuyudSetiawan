@@ -1,24 +1,14 @@
 import clsx from 'clsx';
-import { Hash } from 'lucide-react';
-import { useState } from 'react';
 
+import Contacts from '../media';
 import HeroProfile from '../../assets/image/dtd.webp';
 import ProfileImage from '../../assets/image/suyudsetiawan.png';
 import useResizeWindow from '../../hooks/useResizeWindow';
-import Contacts from '../media';
 import AnimateTechStackScroll from '../AnimateTechStackScroll';
-
-const bio =
-  "Hello World I'm Suyud Setiawan Al Arif, you guys can call me Suyud and I am a web developer specializing in web application development using React. I have a strong interest in modern web technologies and have developed various projects that showcase my ability to create dynamic, responsive, and user-friendly web applications.";
 
 const Header = () => {
   const { isMediaScreen } = useResizeWindow();
 
-  const [toggleSeeMoreBio, setToggleSeeMoreBio] = useState(false);
-
-  const toggleSeeMore = () => {
-    setToggleSeeMoreBio(!toggleSeeMoreBio);
-  };
   return (
     <header className={clsx('relative')}>
       <div>
@@ -49,21 +39,14 @@ const Header = () => {
               Suyud Setiawan Al Arif
             </h1>
             {isMediaScreen('lg') ? (
-              <>
-                <p className={clsx('text-base text-justify mt-2')}>
-                  {toggleSeeMoreBio ? bio : bio.substring(0, 250) + '...'}
-                </p>
-                <span
-                  onClick={toggleSeeMore}
-                  className={clsx(
-                    'cursor-pointer hover:underline underline-offset-2',
-                    'inline-block',
-                    'lg:mt-1'
-                  )}>
-                  <Hash className={clsx('inline text-[#D81E5B] w-4')} />
-                  {toggleSeeMoreBio ? 'See less...' : 'See more...'}
-                </span>
-              </>
+              <p className={clsx('text-base text-justify mt-2')}>
+                Hello World I'm Suyud Setiawan Al Arif, you guys can call me
+                Suyud and I am a web developer specializing in web application
+                development using React. I have a strong interest in modern web
+                technologies and have developed various projects that showcase
+                my ability to create dynamic, responsive, and user-friendly web
+                applications.
+              </p>
             ) : (
               <>
                 <p className={clsx('text-sm', 'md:text-base')}>
